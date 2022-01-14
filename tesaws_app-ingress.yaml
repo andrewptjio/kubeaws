@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: tesaws_app-ingress
+  annotations:
+    dev.okteto.com/generate-host: "domain"
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: tesaws_app-service
+          servicePort: 8000
+
